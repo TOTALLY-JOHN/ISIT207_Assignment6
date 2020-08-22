@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment6_Task1</title>
+    <style>
+        body {
+            background-color:gray;
+        }
+        #jquery6_container {
+            width:100%;
+            height:600px;
+            border:1px solid black;
+            margin:0px auto 0px auto;
+        }
+        #jquery6_nav {
+            height:50px;
+            background-color:black;
+            color:white;
+        }
+        #jquery6_header {
+            text-align:center;
+            background-color:white;
+            padding-top:45px;
+            height:105px;
+        }
+        #jquery6_body {
+            height:400px;
+            background-color:#e9e9e9;
+        }
+        a {
+            text-decoration:none;
+            font-size:22px;
+            color:white;
+        }
+        .nav {
+            width:90px;
+            padding-top:12px;
+            height:38px;
+            background-color:black;
+            float:left;
+            text-align:center;
+            font-family:Arial;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready($(function () {
+        $(".nav").hover(function () {
+            $(this).css("background-color", "gray");
+        }, function () {
+            $(this).css("background-color", "black");
+        });
+        $("#button1").click(function () {
+            $("#article1").css("color", "blue").fadeOut(2000).fadeIn(2000);
+        });
+        $("#button2").click(function () {
+            $("#article2").hide(1500, function () {
+                alert("The paragraph chosen is hidden right now!");
+            });
+        });
+    }));
+</script>
+</head>
+<body>
+    <div id="jquery6_container">
+        <div id="jquery6_nav">
+            <div class="nav" style="margin-left:79.7%;"><a href="jquery6.html">Task 1</a></div>
+            <div class="nav"><a href="jquery7.html">Task 2</a></div>
+            <div class="nav"><a href="jquery8.html">Task 3</a></div>
+        </div>
+        <div id="jquery6_header">
+            <span style="font-family:'Maiandra GD'; font-size:50px; font-weight:bold;">JQUERY DESIGN LIFE</span>
+        </div>
+        <div id="jquery6_body">
+            <button id="button1" style="margin-left:20px; margin-top:20px; width:100px; height:30px; font-size:18px;">Click Here</button><br /><br />
+            <div id="article1" style="margin:auto 20px auto 20px; font-size:20px;">
+                jQuery is a JavaScript library which is supposed to help developers to
+                make HTML and javascript much simpler. As of May 2019, 73% of developers
+                are utilizing jQuery for a lot of reasons like simplicity. Because the syntax
+                is simpler to navigate a document existing in DOM. Therefore, it reduces a lot
+                of time to develop HTML using jQuery. In addition, jQuery is to provide a paradigm
+                for event-handling that exceeds the level of fundamental Document Object Model
+                selection and manipulation. It involves callback function and Javascript functionality.
+                This wonderful library was originally created in 2006 by John Resig.
+            </div><br />
+            <button id="button2" style="margin-left:20px; margin-top:20px; width:100px; height:30px; font-size:18px;">Click Here</button>
+            <div id="article2" style="margin:20px 20px auto 20px; font-size:20px;">
+                JQuery offers a couple of functions, object methods. It is a factory to
+                create a jQuery object which is to represent some DOM nodes.
+                jQuery is usually utilized by writing initalizating code and event-handling
+                functions in $. This is very useful to be triggered by jQuery when the
+                browser has completed building the DOM for the webpage.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

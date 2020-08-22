@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment6_Task3</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        #jquery8_container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid black;
+            margin: 0px auto 0px auto;
+        }
+
+        #jquery8_nav {
+            height: 50px;
+            background-color: black;
+            color: white;
+        }
+
+        #jquery8_header {
+            text-align: center;
+            background-color: white;
+            padding-top: 30px;
+            height: 120px;
+        }
+
+        #jquery8_body {
+            height: 380px;
+            padding-top: 20px;
+            background-color: #e9e9e9;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 22px;
+            color: white;
+        }
+
+        .nav {
+            width: 90px;
+            padding-top: 12px;
+            height: 38px;
+            background-color: black;
+            float: left;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script>
+    $(document).ready($(function () {
+        var move;
+        $(".nav").hover(function () {
+            $(this).css("background-color", "gray");
+        }, function () {
+            $(this).css("background-color", "black");
+        });
+        $("#startBtn").click(function () {
+            var box = $("#box");
+            // jQuery is to create an 'internal' queue with these method calls.
+            // Then it runs the animate calls ONE by ONE.
+            box.animate({ top: '250px' }, 750);
+            box.animate({ left: '250px' }, 750);
+            box.animate({ top: '0px' }, 750);
+            box.animate({ left: '0px' }, 750);
+            move = setInterval(moveBox, 5000);
+        });
+        $("#stopBtn").click(function () {
+            var box = $("#box");
+            box.stop();
+            box.animate({ top: '0px' }, 750).animate({ left: '0px' }, 750);
+            clearInterval(move);
+        });
+        function moveBox() {
+            var box = $("#box");
+            box.animate({ top: '250px' }, 750);
+            box.animate({ left: '250px' }, 750);
+            box.animate({ top: '0px' }, 750);
+            box.animate({ left: '0px' }, 750);
+        }
+    }));
+    </script>
+</head>
+<body>
+    <div id="jquery8_container">
+        <div id="jquery8_nav">
+            <div class="nav" style="margin-left:79.7%;"><a href="jquery6.html">Task 1</a></div>
+            <div class="nav"><a href="jquery7.html">Task 2</a></div>
+            <div class="nav"><a href="jquery8.html">Task 3</a></div>
+        </div>
+        <div id="jquery8_header">
+            <span style="font-family:'Maiandra GD'; font-size:50px; font-weight:bold;">JQUERY DESIGN LIFE</span><br />
+            <button id="startBtn" style="margin-left:20px; margin-top:20px; width:100px; height:30px; font-size:18px;">START</button> &nbsp;
+            <button id="stopBtn" style="margin-left:20px; margin-top:20px; width:100px; height:30px; font-size:18px;">STOP</button> &nbsp;
+        </div>
+        <div id="jquery8_body">
+            <div id="boxRange" style="width:350px; height:350px; border:2px solid black; margin:0px auto 0px auto; background-color:floralwhite;">
+                <div id="box" style="width:100px; height:100px; background-color:crimson; position:relative; left:0px; top:0px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
